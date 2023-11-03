@@ -2,7 +2,9 @@
 
 ## System Requirements
 **CPU**: 12th Gen Intel(R) Core(TM) i5-12600K   3.69 GHz
+
 **RAM**: 16GB
+
 **Windows Version**: Windows 10 Pro
 
 ## Installation Instructions
@@ -36,4 +38,5 @@
 
 ## Resources
 [1] A. Rosh.  (May 26th). “Address Already in Use”: A Simple Guide to Freeing Up Ports [Online]. Available: https://medium.com/@antonrosh/address-already-in-use-a-simple-guide-to-freeing-up-ports-fbc6a3822983
+
 [2] React Native. (Aug 29, 2023). Setting up the development environment [Online]. Available: https://reactnative.dev/docs/environment-setup?guide=native
