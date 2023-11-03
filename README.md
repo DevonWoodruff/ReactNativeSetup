@@ -1,79 +1,39 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Lab Assignment 1: Spinning Up React Native App
 
-# Getting Started
+## System Requirements
+**CPU**: 12th Gen Intel(R) Core(TM) i5-12600K   3.69 GHz
+**RAM**: 16GB
+**Windows Version**: Windows 10 Pro
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Installation Instructions
+* Download and install Android Studio (use default setup settings). [2]
+* Download and install Node.js (use default setup settings but don't install chocolatey).
 
-## Step 1: Start the Metro Server
+## Configuration Steps
+1. Open Android Studio then click "More Actions" --> "SDK Manager".
+2. Tick the "Show Package Details" button on the bottom right, then find Android 13.0 ("Tiramisu") and tick **Android SDK Platform 33** and **Intel x86 Atom_64 System Image** then click apply and install.
+3. Switch to the "SDK Tools" tab and tick the "Show Package Details" button again then tick **33.0.0** and install it.
+4. Go to your Windows Control Panel --> User Accounts --> User Accounts (again) --> Change my environment variables --> New --> then enter ANDROID_HOME as the variable name and the location of your SDK folder as the variable value. You can find the SDK location by searching **%LOCALAPPDATA%\Android\Sdk** in your start menu search bar.
+5. Open Windows PowerShell and enter **Get-ChildItem -Path Env:\\** to check that your ANDROID_HOME has been added successfully. 
+6. Return to Change my environment variables then click on **"Path"** and select Edit... --> New --> then paste **%LOCALAPPDATA%\Android\Sdk\platform-tools** --> Click Ok. [2]
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Project Creation
+1. Open up a command prompt by running **CMD** as administrator in your windows search bar then enter **npm uninstall -g react-native-cli @react-native-community/cli** if you've previously installed a global react-native-cli package, then enter **npx react-native@latest init AwesomeProject** (you can change "AwesomeProject" to whatever you want your project to be called. Wait for the project to finish setting up before the next step.
+2. Go to Android Studio and open an existing project, then find your project from the file explorer (you can find out where you project is located by checking the command prompt that you used to create your project) and open the file with the Android logo (it will take time to load the project).
+3. Create a virtual device to open your project with by opening the device manager tab and click the "Create Device" button. Select a device you'd like to use then press "Next" and download the "Tiramisu" with the API level 33 by clicking the download button next to it. Go to the next page and name the Android Virtual Device or leave it as is and click "Finish". [2]
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Running The Project
+1. In Android Studio, click the "Build" tab and select "Make Project", this will take a while to complete.
+2. Click "Run", then Run 'app'. If you haven't already selected your target device, do so now.
+3. Once everything is finished loading and your Android Virtual Device is open, you will notice errors on the phone screen. Go to the location of your project folder and type "cmd" in the folder address bar to open a command prompt that points to your project folder.
+4. Type "npm run start" then when prompted, type "r". Once it finishes loading you should see the React Native screen on your Android Virtual Device. [2]
 
-```bash
-# using npm
-npm start
+## Troubleshooting
+* Always make sure you're targeting the correct folders when using the command prompt, otherwise you will get errors when running commands.
+* Be patient with the Android Virtual Device when it's booting up, if you try to turn it off and on while its loading you may cause it to freeze and will require you to restart Android Studio to fix.
+* If you encounter an error running your project through the command prompt that resembles: "error listen EADDRINUSE: address already in use", follow this troubleshooting guide: https://medium.com/@antonrosh/address-already-in-use-a-simple-guide-to-freeing-up-ports-fbc6a3822983 [1]
+* Be sure to save your project files somewhere on your computer where you have full permissions otherwise you may encounter problems with modifying it in the future.
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Resources
+[1] A. Rosh.  (May 26th). “Address Already in Use”: A Simple Guide to Freeing Up Ports [Online]. Available: https://medium.com/@antonrosh/address-already-in-use-a-simple-guide-to-freeing-up-ports-fbc6a3822983
+[2] React Native. (Aug 29, 2023). Setting up the development environment [Online]. Available: https://reactnative.dev/docs/environment-setup?guide=native
